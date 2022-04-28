@@ -6,16 +6,17 @@ import lombok.Data;
 import javax.persistence.*;
 
 import static javax.persistence.GenerationType.AUTO;
+import static javax.persistence.GenerationType.IDENTITY;
 
 @Data
 @Entity
 public class Account {
 
     @Id
-    @GeneratedValue(strategy = AUTO)
+    @GeneratedValue(strategy = IDENTITY)
     private long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
@@ -23,7 +24,4 @@ public class Account {
     private String agency;
     private String bank;
 
-    public static final String CONTA_CORRENTE = "Conta Corrente";
-    public static final String CONTA_POUPANCA = "Conta Poupança";
-    public static final String CONTA_CARTAO = "Conta cartão";
 }
