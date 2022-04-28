@@ -2,7 +2,6 @@ package utfpr.edu.projetofinal.service;
 
 import org.springframework.stereotype.Service;
 import utfpr.edu.projetofinal.model.Account;
-import utfpr.edu.projetofinal.model.User;
 import utfpr.edu.projetofinal.repository.AccountRepository;
 
 import java.util.List;
