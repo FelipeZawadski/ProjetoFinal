@@ -8,15 +8,17 @@ import utfpr.edu.projetofinal.model.User;
 import utfpr.edu.projetofinal.service.UserService;
 import utfpr.edu.projetofinal.shared.GenericResponse;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("users")
-public class UserController {
+public class UserController{
 
     @Autowired
     private UserService userService;
 
     @PostMapping
-    GenericResponse createUser(@RequestBody User user){
+    GenericResponse createUser(@RequestBody @Valid User user){
         userService.save(user);
         return new GenericResponse("Registro Salvo");
     }
@@ -33,7 +35,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    GenericResponse replaceUser(@RequestBody User user, @PathVariable long id){
+    GenericResponse replaceUser(@RequestBody @Valid User user, @PathVariable long id){
         userService.replaceUser(user,id);
         return new GenericResponse("Registro Atualizado");
     }

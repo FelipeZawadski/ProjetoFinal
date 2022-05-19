@@ -64,7 +64,7 @@ public class UserControllerTest {
         User user = createValidUser();
         testRestTemplate.postForEntity(USERS, user, Object.class);
         List<User> users = userRepository.findAll();
-        User userBD = users.get(0);
+        User userBD = users.get(1);
         assertThat(userBD.getPassword()).isNotEqualTo(user.getPassword());
     }
 

@@ -20,7 +20,6 @@ public class User implements UserDetails {
     @GeneratedValue
     private long id;
 
-
     @NotNull(message = "{utfpr.user.username.constraints.NotNull.message}")
     @Size(min = 4, max = 255, message = "O tamanho deve ser entre {min} e {max}")
     @UniqueUsername
@@ -34,7 +33,6 @@ public class User implements UserDetails {
     @Size(min = 6, max = 255)
     @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*$")
     private String password;
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
