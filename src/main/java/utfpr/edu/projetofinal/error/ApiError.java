@@ -25,7 +25,7 @@ public class ApiError {
         this.validationErros = validationErros;
     }
 
-    public ApiError(int status, String message, String url){
+    public ApiError(int status, String message, String url) {
         this.status = status;
         this.message = message;
         this.url = url;
