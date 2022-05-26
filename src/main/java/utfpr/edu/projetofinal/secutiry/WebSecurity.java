@@ -32,6 +32,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST,"/users").permitAll()
+                .antMatchers(HttpMethod.GET,"/users").permitAll()
                 .antMatchers(HttpMethod.POST,"/account").permitAll()
 
                 //.antMatchers(HttpMethod.POST,"/users").hasAnyRole("ADMIN or USER")
