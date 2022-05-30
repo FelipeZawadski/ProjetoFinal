@@ -7,14 +7,16 @@ import utfpr.edu.projetofinal.repository.UserRepository;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class UniqueUsernameValidator implements ConstraintValidator<UniqueUsername, String> {
+public class UniqueUsernameValidator
+        implements ConstraintValidator<UniqueUsername, String> {
 
     @Autowired
     UserRepository userRepository;
 
     @Override
-    public boolean isValid(String username, ConstraintValidatorContext constraintValidatorContext) {
-        if(userRepository.findByUsername(username) == null){
+    public boolean isValid(String username,
+                           ConstraintValidatorContext constraintValidatorContext) {
+        if (userRepository.findByUsername(username) == null) {
             return true;
         }
         return false;

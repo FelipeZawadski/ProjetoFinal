@@ -9,10 +9,10 @@ import utfpr.edu.projetofinal.model.User;
 public class UserDTO {
 
     private long id;
-    private String username;
     private String email;
+    private String username;
 
-    public UserDTO(User user){
+    public UserDTO(User user) {
         this.id = user.getId();
         this.email = user.getEmail();
         this.username = user.getUsername();
